@@ -11,14 +11,12 @@
 #include "Camera.h"
 #include "Sound.h"
 #include "WorldTransform.h"
-#include "Player.h"
 #include <fstream>
 #include "Ground.h"
 #include "json.hpp"
 #include "LevelLoader.h"
 #include "LevelApplier.h"
 #include "ModelRegistry.h"
-#include "Enemy.h"
 #include "ParticleEffectLibrary.h"
 #include "Skybox.h"
 #include "Prop.h"
@@ -59,7 +57,7 @@ private:
 
 
 	//model
-	std::unique_ptr<Prop> test_plyer;
+
 
 	std::unique_ptr<Prop> block_;
 
@@ -70,9 +68,7 @@ private:
 	std::vector<std::unique_ptr<WorldTransform>> levelTransforms_;
 
 
-	std::unique_ptr<Player> player_ = nullptr;
-
-	std::unique_ptr<Enemy> enemy_ = nullptr;
+	
 	std::unique_ptr<ParticleEffectLibrary> effectLibrary_;
 
 	//efects

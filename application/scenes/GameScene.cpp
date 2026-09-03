@@ -51,28 +51,24 @@ ModelManager::GetInstance()->LoadModel("resources/enemy", "enemy.obj");
 TextureManager::GetInstance()->LoadTexture("resources/gradationLine.png");
 TextureManager::GetInstance()->LoadTexture("resources/circle.png");
 
-std::unique_ptr<LevelData> levelData = LevelLoader::LoadJsonFile("resources/json", "Untitled3.json");
-
-LevelObjectBuilder::BuildFromJson(
-	levelData.get(),
-	levelObjects_,
-	levelTransforms_,
-	camera_.get()
-);
+//std::unique_ptr<LevelData> levelData = LevelLoader::LoadJsonFile("resources/json", "Untitled3.json");
+//
+//LevelObjectBuilder::BuildFromJson(
+//	levelData.get(),
+//	levelObjects_,
+//	levelTransforms_,
+//	camera_.get()
+//);
 
 
 ground_->SetCamera(camera_.get());
 
 	
 
-player_ = std::make_unique<Player>();
-player_->Initialize();
-player_->SetCamera(camera_.get());
+
 Object3dCommon::GetInstance()->SetDefaultCamera(camera_.get());
 
-enemy_ = std::make_unique<Enemy>();
-enemy_->Initialize();
-enemy_-> SetCamera(camera_.get());
+
 
 
 effectLibrary_ = std::make_unique<ParticleEffectLibrary>();
@@ -82,23 +78,12 @@ effectLibrary_->Initialize(DirectXCommon::GetInstance(), SrvManager::GetInstance
 effectLibrary_->SetUseRingAutoEmit(false);
 effectLibrary_->SetUseCylinderAutoEmit(false)*/;
 
-player_->SetEffectLibrary(effectLibrary_.get());
-player_->SetRandomEngine(&randomEngine_);
-std::vector<BaseEnemy*> rawEnemies;
-rawEnemies.push_back(enemy_.get());
-player_->SetEnemies(rawEnemies);
 
 // Register models and transforms
 
 // Load and apply level data
 
-test_plyer = std::make_unique<Prop>();
 
-ModelManager::GetInstance()->LoadModel("resources/test_player", "player01.gltf");
-test_plyer->Initialize("player01.gltf");
-
-test_plyer->SetTranslate({ 10.0f, 0.0f, 5.0f });
-test_plyer->SetCamera(camera_.get());
 
 
 block_ = std::make_unique<Prop>();
@@ -162,7 +147,7 @@ void GameScene::Update() {
 	ImGui::End();
 
 #endif
-	test_plyer->Update();
+	
 
 	block_->Update();
 
@@ -170,8 +155,7 @@ void GameScene::Update() {
 
 	ground_->Update();
 
-	player_->Updata();
-	enemy_->Update();
+	
 	effectLibrary_->Update();
 	camera_->Update();
 	
@@ -216,7 +200,7 @@ void GameScene::Draw() {
 	//block_->Draw();
 
 	
-	enemy_->Draw();
+
 	SpriteCommon::GetInstance()->Set3DOverlayPipeline();
 	//effectLibrary_->DrawCylinder();
 	//player_->HitEffectDraw();

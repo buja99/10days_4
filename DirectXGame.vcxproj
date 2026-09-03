@@ -117,10 +117,6 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="engine\gameplay\enemy\EnemyStateAttack.cpp" />
-    <ClCompile Include="engine\gameplay\enemy\EnemyStateDead.cpp" />
-    <ClCompile Include="engine\gameplay\enemy\EnemyStateChase.cpp" />
-    <ClCompile Include="engine\gameplay\enemy\EnemyStateIdle.cpp" />
     <ClCompile Include="engine\3D\lights\AmbientLight.cpp" />
     <ClCompile Include="engine\3D\AnimatedModel.cpp" />
     <ClCompile Include="engine\3D\lights\AreaLight.cpp" />
@@ -134,8 +130,6 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="application\Base\WinApp.cpp" />
     <ClCompile Include="application\Input\Input.cpp" />
     <ClCompile Include="application\sceneSystem\BaseScene.cpp" />
-    <ClCompile Include="engine\gameplay\enemy\BaseEnemy.cpp" />
-    <ClCompile Include="engine\gameplay\enemy\Enemy.cpp" />
     <ClCompile Include="engine\camera\Camera.cpp" />
     <ClCompile Include="engine\2D\Sprite.cpp" />
     <ClCompile Include="engine\2D\SpriteCommon.cpp" />
@@ -157,7 +151,6 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="engine\particle\ParticleManager.cpp" />
     <ClCompile Include="engine\utils\json\ModelRegistry.cpp" />
     <ClCompile Include="application\core\MyGame.cpp" />
-    <ClCompile Include="engine\gameplay\player\Player.cpp" />
     <ClCompile Include="engine\utils\ResourceUtils.cpp" />
     <ClCompile Include="application\sceneSystem\SceneFactory.cpp" />
     <ClCompile Include="application\sceneSystem\SceneManager.cpp" />
@@ -179,14 +172,8 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="engine\render\postEffect\RadialBlurEffect.cpp" />
     <ClCompile Include="engine\3D\lights\SpotLight.cpp" />
     <ClCompile Include="engine\render\postEffect\VignetteEffect.cpp" />
-    <ClCompile Include="engine\gameplay\player\PlayerStateIdle.cpp" />
-    <ClCompile Include="engine\gameplay\player\PlayerStateMove.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="engine\gameplay\enemy\EnemyStateAttack.h" />
-    <ClInclude Include="engine\gameplay\enemy\EnemyStateDead.h" />
-    <ClInclude Include="engine\gameplay\enemy\EnemyStateChase.h" />
-    <ClInclude Include="engine\gameplay\enemy\EnemyStateIdle.h" />
     <ClInclude Include="engine\3D\lights\AmbientLight.h" />
     <ClInclude Include="engine\3D\AnimatedModel.h" />
     <ClInclude Include="engine\3D\lights\AreaLight.h" />
@@ -202,8 +189,6 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="application\Input\Input.h" />
     <ClInclude Include="application\sceneSystem\BaseScene.h" />
     <ClInclude Include="engine\3D\Bone.h" />
-    <ClInclude Include="engine\gameplay\enemy\BaseEnemy.h" />
-    <ClInclude Include="engine\gameplay\enemy\Enemy.h" />
     <ClInclude Include="engine\camera\Camera.h" />
     <ClInclude Include="engine\2D\Sprite.h" />
     <ClInclude Include="engine\2D\SpriteCommon.h" />
@@ -212,9 +197,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="engine\3D\ModelManager.h" />
     <ClInclude Include="engine\3D\Object3d.h" />
     <ClInclude Include="engine\3D\Object3dCommon.h" />
-    <ClInclude Include="engine\gameplay\enemy\IEnemyState.h" />
     <ClInclude Include="engine\gameplay\IEnemyState.h" />
-    <ClInclude Include="engine\gameplay\player\IPlayerState.h" />
     <ClInclude Include="engine\Math\Lighting.h" />
     <ClInclude Include="engine\Math\Material.h" />
     <ClInclude Include="engine\Math\Matrix3x3.h" />
@@ -235,7 +218,6 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="engine\utils\json\LevelLoader.h" />
     <ClInclude Include="engine\utils\json\ModelRegistry.h" />
     <ClInclude Include="application\core\MyGame.h" />
-    <ClInclude Include="engine\gameplay\player\Player.h" />
     <ClInclude Include="engine\utils\ResourceUtils.h" />
     <ClInclude Include="application\sceneSystem\SceneFactory.h" />
     <ClInclude Include="application\sceneSystem\SceneManager.h" />
@@ -261,8 +243,6 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="engine\render\postEffect\RadialBlurEffect.h" />
     <ClInclude Include="engine\3D\lights\SpotLight.h" />
     <ClInclude Include="engine\render\postEffect\VignetteEffect.h" />
-    <ClInclude Include="engine\gameplay\player\PlayerStateIdle.h" />
-    <ClInclude Include="engine\gameplay\player\PlayerStateMove.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="externals\DirectXTex\DirectXTex_Desktop_2022_Win10.vcxproj">
